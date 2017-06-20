@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+
+@import 'normalize';
+@import 'vars';
+@import 'mixins';
+
+body {
+  font-family: 'Poppins', sans-serif;
+  //background-image: url('../images/arrow-bg.jpg');
+}
+
+.reveal {
+  animation: reveal 1.5s;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

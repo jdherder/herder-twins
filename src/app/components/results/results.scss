@@ -1,0 +1,44 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.results {
+  .results-option-container {
+    margin: 25px 0 35px 0;
+
+    > p {
+      margin-bottom: 3px;
+    }
+  }
+
+  .results-bar-container {
+    position: relative;
+    border: 2px solid white;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .results-bar {
+    position: relative;
+    background-color: white;
+    height: 40px;
+    width: 0;
+    transition: width 3s ease;
+  }
+
+  .results-votes {
+    text-shadow: 1px 1px 6px $teal;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    &.left {
+      right: auto;
+      left: 10px;
+    }
+  }
+
+  .vote-text {
+    font-size: 12px;
+  }
+}
