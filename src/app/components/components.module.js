@@ -5,6 +5,7 @@ import results from './results/results.component';
 import reveal from './reveal/reveal.component';
 import headerNav from './headerNav/headerNav.component';
 import contentContainer from './contentContainer/contentContainer.component';
+import scratcher from './scratcher/scratcher.component';
 
 export default angular.module('app.components', [])
   .component('vote', vote)
@@ -12,4 +13,5 @@ export default angular.module('app.components', [])
   .component('reveal', reveal)
   .component('headerNav', headerNav)
   .component('contentContainer', contentContainer)
+  .component('scratcher', scratcher)
   .name;
