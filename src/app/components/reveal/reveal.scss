@@ -2,5 +2,41 @@
 @import '../../../styles/mixins';
 
 .reveal {
+  position: relative;
 
+  .message {
+
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #reveal-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin-top: 25px;
+    background-color: white;
+    user-select: none;
+    border: 5px solid white;
+    border-radius: 50%;
+  }
+
+  #reveal-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  #reveal-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
 }
