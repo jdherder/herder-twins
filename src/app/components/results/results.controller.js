@@ -1,10 +1,18 @@
 import constants from '../../app.constants';
 
 export default class ResultsController {
-  constructor(firebaseService) {
+  constructor($state, firebaseService) {
+    this.$state = $state;
     this.firebaseService = firebaseService;
 
     this.votesObj = {};
+  }
+
+  $onChanges() {
+    this.firebaseService.getResults()
+      .then(votesObj => {
+        this.votesObj = votesObj;
+      });
   }
 
   calcPct(votes) {
@@ -41,11 +49,8 @@ export default class ResultsController {
     };
   }
 
-  $onChanges() {
-    this.firebaseService.getResults()
-      .then(votesObj => {
-        this.votesObj = votesObj;
-      });
+  goToReveal() {
+    this.$state.go('reveal');
   }
 
 }

@@ -1,9 +1,13 @@
 <div class="vote">
-    <div class="vote-text">What do you think the twins will be?</div>
-    <div class="vote-options">
-        <div class="vote-option" ng-click="$ctrl.voteBoyBoy()">2 Boys</div>
-        <div class="vote-option" ng-click="$ctrl.voteGirlGirl()">2 Girls</div>
-        <div class="vote-option" ng-click="$ctrl.voteBoyGirl()">1 Boy, 1 Girl</div>
-    </div>
-    <div class="skip" ng-click="$ctrl.viewResults()">Skip to results</div>
+    <header-nav></header-nav>
+
+    <content-container>
+        <div class="vote-text">What do you think the twins will be?</div>
+        <div class="vote-options">
+            <div class="vote-option" ng-click="$ctrl.voteBoyBoy()">2 Boys</div>
+            <div class="vote-option" ng-click="$ctrl.voteGirlGirl()">2 Girls</div>
+            <div class="vote-option" ng-click="$ctrl.voteBoyGirl()">1 Boy, 1 Girl</div>
+        </div>
+        <div class="skip" ng-click="$ctrl.goToResults()">Already voted? Skip to results.</div>
+    </content-container>
 </div>

@@ -9,6 +9,20 @@ body {
   //background-image: url('../images/arrow-bg.jpg');
 }
 
+h1 {
+  color: $teal;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: white;
+  color: $teal;
+  padding: 10px;
+  border-radius: 15px;
+}
+
 .reveal {
   animation: reveal 1.5s;
 }

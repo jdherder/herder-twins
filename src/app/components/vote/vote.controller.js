@@ -1,12 +1,21 @@
 import constants from '../../app.constants';
 
 export default class VoteController {
-  constructor(firebaseService, storageService, analyticsService) {
+  constructor($state, firebaseService, storageService, analyticsService) {
+    this.$state = $state;
     this.firebaseService = firebaseService;
     this.storageService = storageService;
     this.analyticsService = analyticsService;
 
     this.allowVote = true;
+  }
+
+  $onInit() {
+    const voted = this.storageService.getItem(constants.voted);
+
+    if (voted === 'true') {
+      this.goToResults();
+    }
   }
 
   voteBoyBoy() {
@@ -19,6 +28,10 @@ export default class VoteController {
 
   voteBoyGirl() {
     this.incrementVote(constants.voteBoyGirl);
+  }
+
+  goToResults() {
+    this.$state.go('results');
   }
 
   incrementVote(ref) {
@@ -35,10 +48,7 @@ export default class VoteController {
 
         this.storageService.setItem(constants.voted, true);
 
-        /* If voteCast is provided via binding through fn reference */
-        if (this.voteCast) {
-          this.voteCast();
-        }
+        this.goToResults();
 
         this.analyticsService.event('voted', ref);
       });

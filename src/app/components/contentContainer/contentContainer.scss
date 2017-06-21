@@ -1,0 +1,17 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.content-container {
+  background-color: $teal;
+  margin: 0 auto 0;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  min-height: 450px;
+  max-width: 500px;
+
+  @include media-sm() {
+    margin: 20px;
+  }
+}

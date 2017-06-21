@@ -1,39 +1,45 @@
 <div class="results">
-    Current results:
+    <header-nav></header-nav>
 
-    <div class="results-option-container">
-        <p>2 Boys</p>
-        <div class="results-bar-container">
-            <div class="results-bar" ng-style="{'width': $ctrl.votesBoyBoy().pct}">
-                <div class="results-votes left reveal" ng-bind="$ctrl.votesBoyBoy().pct"></div>
-            </div>
-            <div class="results-votes">
-                <span ng-bind="$ctrl.votesBoyBoy().votes"></span> <span class="vote-text">votes</span>
+    <content-container>
+        This is what you thought:
+
+        <div class="results-option-container">
+            <p>2 Boys</p>
+            <div class="results-bar-container">
+                <div class="results-bar" ng-style="{'width': $ctrl.votesBoyBoy().pct}">
+                    <div class="results-votes left reveal" ng-bind="$ctrl.votesBoyBoy().pct"></div>
+                </div>
+                <div class="results-votes">
+                    <span ng-bind="$ctrl.votesBoyBoy().votes"></span> <span class="vote-text">votes</span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="results-option-container">
-        <p>2 Girls</p>
-        <div class="results-bar-container">
-            <div class="results-bar" ng-style="{'width': $ctrl.votesGirlGirl().pct}">
-                <div class="results-votes left reveal" ng-bind="$ctrl.votesGirlGirl().pct"></div>
-            </div>
-            <div class="results-votes">
-                <span ng-bind="$ctrl.votesGirlGirl().votes"></span> <span class="vote-text">votes</span>
+        <div class="results-option-container">
+            <p>2 Girls</p>
+            <div class="results-bar-container">
+                <div class="results-bar" ng-style="{'width': $ctrl.votesGirlGirl().pct}">
+                    <div class="results-votes left reveal" ng-bind="$ctrl.votesGirlGirl().pct"></div>
+                </div>
+                <div class="results-votes">
+                    <span ng-bind="$ctrl.votesGirlGirl().votes"></span> <span class="vote-text">votes</span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="results-option-container">
-        <p>1 Boy, 1 Girl</p>
-        <div class="results-bar-container">
-            <div class="results-bar" ng-style="{'width': $ctrl.votesBoyGirl().pct}">
-                <div class="results-votes left reveal" ng-bind="$ctrl.votesBoyGirl().pct"></div>
-            </div>
-            <div class="results-votes">
-                <span ng-bind="$ctrl.votesBoyGirl().votes"></span> <span class="vote-text">votes</span>
+        <div class="results-option-container">
+            <p>1 Boy, 1 Girl</p>
+            <div class="results-bar-container">
+                <div class="results-bar" ng-style="{'width': $ctrl.votesBoyGirl().pct}">
+                    <div class="results-votes left reveal" ng-bind="$ctrl.votesBoyGirl().pct"></div>
+                </div>
+                <div class="results-votes">
+                    <span ng-bind="$ctrl.votesBoyGirl().votes"></span> <span class="vote-text">votes</span>
+                </div>
             </div>
         </div>
-    </div>
+
+        <div class="btn" ng-click="$ctrl.goToReveal()">Go to Reveal!</div>
+    </content-container>
 </div>
