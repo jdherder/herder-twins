@@ -58,8 +58,12 @@ var options = {
     ])
   ],
   devServer: {
+    port: 8080,
     historyApiFallback: true,
-    stats: 'minimal',
+    disableHostCheck: true,
+    stats: {
+      children: false,
+    },
   }
 };
 
