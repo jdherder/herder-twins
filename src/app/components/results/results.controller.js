@@ -1,11 +1,16 @@
 import constants from '../../app.constants';
 
 export default class ResultsController {
-  constructor($state, firebaseService) {
+  constructor($state, firebaseService, analyticsService) {
     this.$state = $state;
     this.firebaseService = firebaseService;
+    this.analyticsService = analyticsService;
 
     this.votesObj = {};
+  }
+
+  $onInit() {
+    this.analyticsService.pageview('/results');
   }
 
   $onChanges() {

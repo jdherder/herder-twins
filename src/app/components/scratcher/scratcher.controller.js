@@ -3,9 +3,10 @@ import constants from '../../app.constants';
 const scratchImg = require('../../../images/scratch2.png');
 
 export default class RevealController {
-  constructor($element, $timeout) {
+  constructor($element, $timeout, analyticsService) {
     this.$element = $element;
     this.$timeout = $timeout;
+    this.analyticsService = analyticsService;
   }
 
   $onInit() {
@@ -87,7 +88,7 @@ export default class RevealController {
     }
 
     this.lastPoint = currentPoint;
-    // this.handlePercentage(this.getFilledInPixels(32));
+    this.handlePercentage(this.getFilledInPixels(32));
   }
 
   handleMouseUp() {
@@ -119,6 +120,33 @@ export default class RevealController {
 
   angleBetween(point1, point2) {
     return Math.atan2(point2.x - point1.x, point2.y - point1.y);
+  }
+
+  getFilledInPixels(stride) {
+    if (!stride || stride < 1) { stride = 1; }
+
+    const pixels = this.ctx.getImageData(0, 0, this.canvasWidth, this.canvasHeight);
+    const pdata = pixels.data;
+    const l = pdata.length;
+    const total = (l / stride);
+    let count = 0;
+
+    // Iterate over all pixels
+    for(let i = count = 0; i < l; i += stride) {
+      if (parseInt(pdata[i]) === 0) {
+        count++;
+      }
+    }
+
+    return Math.round((count / total) * 100);
+  }
+
+  handlePercentage(filledInPixels) {
+    filledInPixels = filledInPixels || 0;
+
+    if (filledInPixels > 50) {
+      this.analyticsService.event('revealed', this.config.id, this.config.text);
+    }
   }
 
 }

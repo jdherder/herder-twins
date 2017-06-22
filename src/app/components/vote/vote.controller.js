@@ -15,6 +15,8 @@ export default class VoteController {
 
     if (voted === 'true') {
       this.goToResults();
+    } else {
+      this.analyticsService.pageview('/vote');
     }
   }
 
