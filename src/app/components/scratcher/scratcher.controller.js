@@ -7,6 +7,8 @@ export default class RevealController {
     this.$element = $element;
     this.$timeout = $timeout;
     this.analyticsService = analyticsService;
+
+    this.analyticsFired = false;
   }
 
   $onInit() {
@@ -144,8 +146,9 @@ export default class RevealController {
   handlePercentage(filledInPixels) {
     filledInPixels = filledInPixels || 0;
 
-    if (filledInPixels > 50) {
+    if (filledInPixels > 50 && !this.analyticsFired) {
       this.analyticsService.event('revealed', this.config.id, this.config.text);
+      this.analyticsFired = true;
     }
   }
 
