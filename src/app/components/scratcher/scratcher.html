@@ -1,5 +1,6 @@
 <div class="scratcher">
     <div class="reveal-container" ng-style="$ctrl.containerStyle">
+        <img class="boundary-img" ng-src="{{$ctrl.boundaryImg}}" ng-if="$ctrl.boundaryImg" ng-style="$ctrl.boundaryImgStyle" />
         <canvas class="reveal-canvas" width="{{$ctrl.size}}" height="{{$ctrl.size}}"></canvas>
         <div class="reveal-info" style="visibility: hidden;">
             <h1>{{$ctrl.config.text || 'No config text'}}</h1>

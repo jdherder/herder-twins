@@ -1,6 +1,6 @@
 import constants from '../../app.constants';
 
-const scratchImg = require('../../../images/scratch.png');
+const scratchImg = require('../../../images/scratch2.png');
 
 export default class RevealController {
   constructor($element, $timeout) {
@@ -10,11 +10,19 @@ export default class RevealController {
 
   $onInit() {
     this.defaultSize = 250;
-    this.size = this.config.size || this.defaultSize;
+    this.size = parseInt(this.config.size || this.defaultSize);
 
     this.containerStyle = {
-      width: (this.config.size || this.defaultSize) + 'px',
-      height: (this.config.size || this.defaultSize) + 'px',
+      width: this.size + 'px',
+      height: this.size + 'px',
+    };
+
+    /* boundary image can be sized the same as container (250), will be scaled up */
+    this.boundaryImg = this.config.boundaryImg || null;
+
+    this.boundaryImgStyle = {
+      width: parseInt(this.size * 1.7) + 'px',
+      height: parseInt(this.size * 1.7) + 'px',
     };
   }
 
@@ -50,7 +58,7 @@ export default class RevealController {
   }
 
   onImgLoad() {
-    this.ctx.drawImage(this.image, 0, 0);
+    this.ctx.drawImage(this.image, 0, 0, this.size, this.size);
     this.revealInfo.style.visibility = 'visible';
   }
 

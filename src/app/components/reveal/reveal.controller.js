@@ -1,13 +1,18 @@
+const babya = require('../../../images/babya-circle-text.svg');
+const babyb = require('../../../images/babyb-circle-text.svg');
+
 export default class RevealController {
   constructor() {
     this.scratcherA = {
-      text: `It's a TEST-A`,
+      text: `TEST`,
       size: 250,
+      boundaryImg: babya,
     };
 
     this.scratcherB = {
-      text: `It's a TEST-B`,
+      text: `TEST`,
       size: 250,
+      boundaryImg: babyb,
     };
   }
 

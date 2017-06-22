@@ -1,4 +1,8 @@
 .scratcher {
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+
   .reveal-container {
     position: relative;
     margin-top: 25px;
@@ -21,5 +25,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+  }
+
+  .boundary-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
   }
 }
