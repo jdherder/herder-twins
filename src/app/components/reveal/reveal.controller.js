@@ -7,14 +7,14 @@ export default class RevealController {
 
     this.scratcherA = {
       id: 'baby-a-scratcher',
-      text: `TEST`,
+      text: `BOY`,
       size: 250,
       boundaryImg: babya,
     };
 
     this.scratcherB = {
       id: 'baby-b-scratcher',
-      text: `TEST`,
+      text: `GIRL`,
       size: 250,
       boundaryImg: babyb,
     };
