@@ -18,7 +18,7 @@ var options = {
   output: {
     path: root('dist'),
     publicPath: '',
-    filename: '[name].bundle.js',
+    filename: '[name].[hash].bundle.js',
   },
   module: {
     rules: [
@@ -49,7 +49,7 @@ var options = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name].[hash].css'),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
