@@ -34,6 +34,7 @@ export default class VoteController {
 
   goToResults() {
     this.$state.go('results');
+    this.analyticsService.event('skipped', '', '');
   }
 
   incrementVote(ref) {
